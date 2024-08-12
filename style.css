@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: red;
+    width: 100%;   
+}
+
+.input{
+    background-color: green;
+    width: 100%;
+}
+
+.output{
+    background-color: rgb(86, 12, 116);
+    width: 100%;
+}
+
+.text{
+    background-color: pink;
+    width: 100;
+}
+
+.botones{
+    background-color: blue;
+    width: 100%;
+}
