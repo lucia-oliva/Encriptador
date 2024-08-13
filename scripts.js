@@ -5,9 +5,13 @@ const instruccion = document.getElementById('instruccion');
 textarea.addEventListener('input', () =>{
     if(textarea.value.trim() === ''){
         instruccion.classList.remove('hidden');
+        mostrarContenido('');
+        limpiarOutput(); 
     }else{
         instruccion.classList.add('hidden');
+        limpiarOutput(); 
     }
+    
 });
 
 //limpiar cuadro output
@@ -22,7 +26,6 @@ function limpiarOutput(){
     }
 }
 
-limpiarOutput();
 
 //limitar a solo minusculas y sin acentos
 function esTextovalido(texto){
@@ -39,7 +42,11 @@ function esTextovalido(texto){
 
 const button_encriptar = document.getElementById('encriptar_btn');
 button_encriptar.addEventListener('click', function(){
-    console.log(encriptar());
+    const resultado = encriptar();
+    if(resultado){
+        mostrarContenido(resultado);
+        limpiarOutput();
+    }
 });
 
 
@@ -47,40 +54,40 @@ button_encriptar.addEventListener('click', function(){
 function encriptar(){
     const textarea = document.getElementById('input-text');
     const texto = textarea.value;
+
     if(texto.trim() === ''){
         console.log('Ingresa texto');
         return;
     }else if( texto.trim() !== '' && esTextovalido(texto.trim())){
-        let textoEncriptado = '';
+        let mensaje = '';
         for(let i=0; i<texto.length; i++){
             let caracter = texto[i];
 
             switch(caracter){
                 case 'a':
-                    textoEncriptado += 'ai'
+                    mensaje += 'ai'
                     break;
                 case 'e':
-                    textoEncriptado += 'enter'
+                    mensaje += 'enter'
                     break;
                 case 'i':
-                    textoEncriptado += 'imes'
+                    mensaje += 'imes'
                     break;
                 case 'o':
-                    textoEncriptado += 'ober'
+                    mensaje += 'ober'
                     break;
                 case 'u':
-                    textoEncriptado += 'ufat'
+                    mensaje += 'ufat'
                     break;
                 default:
-                    textoEncriptado += caracter;
+                    mensaje += caracter;
                     break;
             }
 
         }
 
-        return textoEncriptado;
+        return mensaje;
     }
-
 }
 
 
@@ -88,7 +95,12 @@ function encriptar(){
 
 const button_desencriptar = document.getElementById('desencriptar_btn');
 button_desencriptar.addEventListener('click', function(){
-    console.log(desencriptar());
+    const resultado = desencriptar();
+    if(resultado){
+        mostrarContenido(resultado);
+        limpiarOutput();
+    }
+ 
 });
 
 
@@ -100,17 +112,26 @@ function desencriptar(){
         console.log('Mensaje vacio, ingresa texto.');
         return;
     }else if( texto.trim() !== '' && esTextovalido(texto.trim())){
-        let textoDesencriptado = texto;
+        let mensaje = texto;
         
-        textoDesencriptado = textoDesencriptado.replace(/ai/g, 'a');
-        textoDesencriptado = textoDesencriptado.replace(/enter/g, 'e');
-        textoDesencriptado = textoDesencriptado.replace(/imes/g, 'i');
-        textoDesencriptado = textoDesencriptado.replace(/ober/g, 'o');
-        textoDesencriptado = textoDesencriptado.replace(/ufat/g, 'u');
+        mensaje = mensaje.replace(/ai/g, 'a');
+        mensaje = mensaje.replace(/enter/g, 'e');
+        mensaje = mensaje.replace(/imes/g, 'i');
+        mensaje = mensaje.replace(/ober/g, 'o');
+        mensaje = mensaje.replace(/ufat/g, 'u');
         
 
-        return textoDesencriptado;
+        return mensaje;
     }
 
 }
 
+//mostrar texto en pantalla
+
+ function mostrarContenido(mensaje) { 
+    const mostrarMensaje = document.getElementById('contenido');
+    mostrarMensaje.textContent = mensaje;
+    limpiarOutput();
+ }
+
+//gestion de alertas
