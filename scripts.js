@@ -154,5 +154,23 @@ function ocultarAlerta(){
 }
 
 
+ // Función para copiar al portapapeles
+ async function copiarAlPortapapeles() {
+    const texto = document.getElementById('contenido').innerText; 
+    try {
+        if(texto.trim() == '') {
+            mostrarAlerta('No hay ningún texto para seleccionar');
+            return;  // salir del método si no hay texto a copiar
+        }else{
+        await navigator.clipboard.writeText(texto); 
+        mostrarAlerta('Texto copiado al portapapeles'); 
+        } 
+    } catch (err) {
+        console.error('Error al copiar el texto:', err); 
+        mostrarAlerta('Error al copiar el texto'); 
+    }
+}
 
-
+  // Añadir el evento click al botón
+const button_copy = document.getElementById('copiar_btn');
+button_copy.addEventListener('click', copiarAlPortapapeles);
