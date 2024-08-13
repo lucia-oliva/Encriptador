@@ -83,3 +83,34 @@ function encriptar(){
 
 }
 
+
+//funcion desencriptar
+
+const button_desencriptar = document.getElementById('desencriptar_btn');
+button_desencriptar.addEventListener('click', function(){
+    console.log(desencriptar());
+});
+
+
+
+function desencriptar(){
+    const textarea = document.getElementById('input-text');
+    const texto = textarea.value;
+    if(texto.trim() === ''){
+        console.log('Mensaje vacio, ingresa texto.');
+        return;
+    }else if( texto.trim() !== '' && esTextovalido(texto.trim())){
+        let textoDesencriptado = texto;
+        
+        textoDesencriptado = textoDesencriptado.replace(/ai/g, 'a');
+        textoDesencriptado = textoDesencriptado.replace(/enter/g, 'e');
+        textoDesencriptado = textoDesencriptado.replace(/imes/g, 'i');
+        textoDesencriptado = textoDesencriptado.replace(/ober/g, 'o');
+        textoDesencriptado = textoDesencriptado.replace(/ufat/g, 'u');
+        
+
+        return textoDesencriptado;
+    }
+
+}
+
