@@ -31,6 +31,16 @@ html {
   font-size: calc(1rem + 2vw)
 }
 
+
+body::-webkit-scrollbar {
+  width: 0.2rem;           
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--fourth-color);    /* color of the scroll thumb */
+  border-radius: 20%;       /* roundness of the scroll thumb */
+}
+
 body{
     background-color: var(--first-color);
     height: 100vh;
@@ -70,6 +80,7 @@ body{
   transition: opacity 0.3s ease;
   box-sizing: border-box;
   overflow: hidden;
+  
 }
 
 .alert.hidden{
@@ -109,6 +120,12 @@ small{
   position: absolute;
   text-align: center;
   pointer-events: none;
+  transition: opacity 0.3 ease;
+}
+
+.instruccion.hidden{
+  opacity:0;
+  pointer-events: none;
 }
 
 .input{
@@ -128,8 +145,12 @@ small{
   border: none;
   color: var(--third-color);
   font-family: var(--font-secondary);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   resize: none;
+}
+
+.input textarea:focus{
+  outline: none;
 }
 
 
@@ -158,13 +179,35 @@ button:hover{
   background-color: #ee70ad;
 }
 
-.espacio-output{
+.output{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.contenido{
+  position: absolute;
+  width: 100%;
   height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  
+}
+
+.espacio-output{
+  height: 40%;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  
+  transition: opacity 0.3s ease;
+}
+
+.espacio-output.hidden{
+  opacity:0;
+  pointer-events: none;
 }
 
 
