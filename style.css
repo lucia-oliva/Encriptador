@@ -28,7 +28,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: calc(1rem + 2vw)
 }
 
 body{
@@ -43,33 +43,62 @@ body{
   justify-content: center;
   align-items: center;
   gap: 5%;
+  box-shadow: 0rem 0.1875rem 0.3125rem 0rem rgba(0,0,0,0.3);
 }
 
-.header img{
+
+.icono{
   max-height: 100%;
   width: auto;
   height: 5vh;
   max-width: 100%;
+  box-sizing: border-box;
+  
+}
+
+.alert{
+  background-color: var(--fourth-color);
+  padding: 0.5rem;
+  color: var(--second-color);
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.alert.hidden{
+    opacity: 0; 
+    pointer-events: none;
+}
+
+.alert.hidden.display-none{
+  display: none;
 }
 
 section {
-  height: 40vh;
+  height: 38vh;
   font-family: var(--font-secondary);
 }
 
 p{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--third-color);
 }
 
 small{
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: var(--third-color);
 }
 
 .espacio{
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -79,6 +108,17 @@ small{
 .instruccion{
   position: absolute;
   text-align: center;
+  pointer-events: none;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rem 0.1875rem 0.3125rem 0rem rgba(0,0,0,0.3);
+  justify-content: center;
+  position: relative;
+  align-items: center;
+
 }
 
 .input textarea{
@@ -95,10 +135,37 @@ small{
 
 .botones{
   height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--second-color);
+  padding: 1.8%;
 }
 
+button{
+  padding: 2%;
+  border: none;
+  background-color: var(--first-color);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0.120rem 0px 0px rgba(102,26,45,1);
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  transition-duration: 0.2s;
+}
 
+button:hover{
+  background-color: #ee70ad;
+}
 
+.espacio-output{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  
+}
 
 
 
