@@ -32,7 +32,7 @@ function esTextovalido(texto){
     if(/^[a-z\s]+$/.test(texto)){
         return true;
     }else{
-        console.log("Escribe en minusculas y sin acentos y sin caracteres especiales");
+        mostrarAlerta('Solo se admite minusculas y espacios')
         return false;
     }
 }
@@ -56,7 +56,7 @@ function encriptar(){
     const texto = textarea.value;
 
     if(texto.trim() === ''){
-        console.log('Ingresa texto');
+        mostrarAlerta('Ingrese un texto para encriptar');
         return;
     }else if( texto.trim() !== '' && esTextovalido(texto.trim())){
         let mensaje = '';
@@ -109,7 +109,7 @@ function desencriptar(){
     const textarea = document.getElementById('input-text');
     const texto = textarea.value;
     if(texto.trim() === ''){
-        console.log('Mensaje vacio, ingresa texto.');
+        mostrarAlerta('Ingrese un texto para desencriptar');
         return;
     }else if( texto.trim() !== '' && esTextovalido(texto.trim())){
         let mensaje = texto;
@@ -135,3 +135,24 @@ function desencriptar(){
  }
 
 //gestion de alertas
+
+//mostrar alerta
+
+function mostrarAlerta(mensaje){
+    const alerta = document.querySelector('.alert');
+    alerta.textContent = mensaje;
+    alerta.classList.remove('hidden');
+    alerta.classList.add('show');
+    //ocultar alerta
+    setTimeout(() => ocultarAlerta(), 3000);
+}
+
+function ocultarAlerta(){
+    const alerta = document.querySelector('.alert');
+    alerta.classList.remove('show');
+    alerta.classList.add('hidden');
+}
+
+
+
+
