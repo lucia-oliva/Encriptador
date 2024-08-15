@@ -18,8 +18,11 @@
   --third-color: #34113f;
   --fourth-color: #8c426d;
   --fifth-color: #2c1f26;
+  --hover-color: #f074b0;
+  --shadow-color: rgb(44, 31, 38 ,0.4);
   --font-primary: "Gurajada", sans-serif;
   --font-secondary: "Share Tech Mono", monospace;
+
 }
 
 * {
@@ -33,18 +36,19 @@ html {
 
 
 body::-webkit-scrollbar {
-  width: 0.2rem;           
+  width: 0.1rem;           
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--fourth-color);    /* color of the scroll thumb */
-  border-radius: 20%;       /* roundness of the scroll thumb */
+  background-color: var(--fourth-color);          
 }
+
 
 body{
     background-color: var(--first-color);
     height: 100vh;
 }
+
 
 .header{
   background-color: var(--second-color);
@@ -80,15 +84,13 @@ body{
   transition: opacity 0.3s ease;
   box-sizing: border-box;
   overflow: hidden;
-  
+}
+
+.alert.show{
+    opacity: 1; 
 }
 
 .alert.hidden{
-    opacity: 0; 
-    pointer-events: none;
-}
-
-.alert.hidden.display-none{
   display: none;
 }
 
@@ -131,7 +133,7 @@ small{
 .input{
   display: flex;
   flex-direction: column;
-  box-shadow: 0rem 0.1875rem 0.3125rem 0rem rgba(0,0,0,0.3);
+  box-shadow: 0rem 0.1875rem 0.3125rem 0rem var(--shadow-color);
   justify-content: center;
   position: relative;
   align-items: center;
@@ -168,7 +170,7 @@ button{
   border: none;
   background-color: var(--first-color);
   border-radius: 0.5rem;
-  box-shadow: 0px 0.120rem 0px 0px rgba(102,26,45,1);
+  box-shadow: 0rem 0.09rem 0rem 0rem var(--fourth-color);
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -176,7 +178,7 @@ button{
 }
 
 button:hover{
-  background-color: #ee70ad;
+  background-color: var(--hover-color);
 }
 
 .output{
@@ -193,6 +195,7 @@ button:hover{
   height: 100%;
   padding: 1rem;
   box-sizing: border-box;
+  color: var(--third-color)
   
 }
 
