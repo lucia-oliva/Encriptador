@@ -185,8 +185,8 @@ function changeMode(){
  var lock = document.getElementById('lock');
  var unlock = document.getElementById('unlock');
  var copy = document.getElementById('copy');
-
  var root = document.documentElement;
+ const shadowButton = document.querySelectorAll('button');
  if(modo.getAttribute("src") == "src/img/moon-ligth.svg"){
     //change icons dark mode
     modo.setAttribute("src", "src/img/sun-dark.svg");
@@ -204,6 +204,9 @@ function changeMode(){
     root.style.setProperty('--fifth-color', '#2c1f26');
     root.style.setProperty('--hover-color', '#b94589');
     root.style.setProperty('--shadow-color', "rgba(11, 7, 9, 0.4)");
+    shadowButton.forEach(boton =>{
+        boton.style.boxShadow ='0rem 0.06rem 0rem 0rem var(--fourth-color)';
+    });
  }else if(modo.getAttribute("src") == "src/img/sun-dark.svg"){
      //change icons ligth mode
      modo.setAttribute("src", "src/img/moon-ligth.svg");
@@ -221,9 +224,12 @@ function changeMode(){
      root.style.setProperty('--fifth-color', '#2c1f26');
      root.style.setProperty('--hover-color', '#f074b0');
      root.style.setProperty('--shadow-color', "rgb(44, 31, 38 ,0.4)");
- }
-}
+     shadowButton.forEach(boton =>{
+        boton.style.boxShadow ='0rem 0.07rem 0rem 0rem var(--fourth-color)';
+        });
 
+    }
+}
 
 //setear funcion cambiar de color a un boton
 
