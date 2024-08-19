@@ -244,7 +244,7 @@ button:hover{
 @media screen and (min-width: 768px) and (max-width: 1024px){
 
   p{
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--third-color);
   }
 
@@ -258,15 +258,31 @@ body{
 
 .tablet-view{
   display: flex;
+  height: 100%;
 }
 
 .tablet-view img{
-  width: 70%;
+  width: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tablet-view a{
+  width: auto;
+  height: auto;
+  display: inline-block;
+  overflow: hidden;
+}
+
+a img{
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .header{
   width: 100%;
-  height: 6%;
+  height: 6vh;
   box-shadow: none;
 }
 
@@ -276,8 +292,19 @@ body{
 
 .main{
   width: 100%;
-  height: 81%;
+  height: 81vh;
   display: flex;
+}
+
+.espacio{
+  height: 100%;
+}
+
+.iconos{ 
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .input{
@@ -299,6 +326,9 @@ body{
   border-radius: 0.5em;
   width: 85%;
   height: 90%;
+  overflow: auto;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
 }
 
 section{
@@ -316,12 +346,19 @@ section{
   top: 0;
 }
 
+.botones-icono{
+  width: 100%;
+  height: 100%;
+}
+
 .input textarea{
   border-radius: 0.5em;
   height: 70%;
-  width: 75%;
+  box-sizing: border-box;
+  width: 85%;
   padding: 1em;
   box-shadow: 0rem 0.09rem 0rem 0rem var(--fourth-color);
+  font-size: 0.8rem;
 }
 
 .botones{
@@ -333,6 +370,7 @@ section{
 button{
   width: 40%;
   height: 35%;
+  padding: 0;
 }
 
 .p-button{
@@ -347,12 +385,10 @@ button{
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 13%;
+  height: 13vh;
   align-items: center;
   justify-content: center;
 }
-
-
 .footer-redes{
   width: 100%;
   display: flex;
