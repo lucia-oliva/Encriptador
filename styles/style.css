@@ -199,6 +199,10 @@ button{
   transition-duration: 0.2s;
 }
 
+.p-button{
+  display: none;
+}
+
 button:hover{
   background-color: var(--hover-color);
 }
@@ -239,6 +243,11 @@ button:hover{
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
 
+  p{
+    font-size: 1.3rem;
+    color: var(--third-color);
+  }
+
 body{
   background-color: var(--second-color);
 }
@@ -274,6 +283,7 @@ body{
 .input{
   box-shadow: none;
   order: 0;
+  box-sizing: 100%;
 }
 
 .output{
@@ -287,7 +297,7 @@ body{
   background-color: var(--first-color);
   box-shadow: 0rem 0.09rem 0rem 0rem var(--fourth-color);
   border-radius: 0.5em;
-  width: 90%;
+  width: 85%;
   height: 90%;
 }
 
@@ -309,13 +319,27 @@ section{
 .input textarea{
   border-radius: 0.5em;
   height: 70%;
-  width: 80%;
+  width: 75%;
   padding: 1em;
   box-shadow: 0rem 0.09rem 0rem 0rem var(--fourth-color);
 }
 
 .botones{
   order:2;
+  height: 30%;
+  flex-wrap: wrap;
+}
+
+button{
+  width: 40%;
+  height: 35%;
+}
+
+.p-button{
+  display: block;
+  font-size: 1rem;
+  padding-left: 1rem;
+  font-family: var(--font-primary);
 }
 
 .footer{
@@ -335,7 +359,5 @@ section{
   justify-content: center;
   gap: 5%;
 }
-
-
 
 }
