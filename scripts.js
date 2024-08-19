@@ -100,7 +100,6 @@ button_desencriptar.addEventListener('click', function(){
         mostrarContenido(resultado);
         limpiarOutput();
     }
- 
 });
 
 
@@ -128,11 +127,11 @@ function desencriptar(){
 
 //mostrar texto en pantalla
 
- function mostrarContenido(mensaje) { 
+function mostrarContenido(mensaje) { 
     const mostrarMensaje = document.getElementById('contenido');
     mostrarMensaje.textContent = mensaje;
     limpiarOutput();
- }
+}
 
 //gestion de alertas
 
@@ -155,7 +154,7 @@ function ocultarAlerta(){
 
 
  // Función para copiar al portapapeles
- async function copiarAlPortapapeles() {
+async function copiarAlPortapapeles() {
     const texto = document.getElementById('contenido').innerText; 
     try {
         if(texto.trim() == '') {
@@ -176,27 +175,26 @@ const button_copy = document.getElementById('copiar_btn');
 button_copy.addEventListener('click', copiarAlPortapapeles);
 
 //funcion cambiar de modo 
-
-function changeMode(){
- const modo = document.getElementById('modo');
- var github = document.getElementById('github');
- var alura = document.getElementById('alura-icon');
- var linkedin = document.getElementById('linkedin icon');
- var lock = document.getElementById('lock');
- var unlock = document.getElementById('unlock');
- var copy = document.getElementById('copy');
- var root = document.documentElement;
- const shadowButton = document.querySelectorAll('button');
- if(modo.getAttribute("src") == "src/img/moon-ligth.svg"){
-    //change icons dark mode
+function changeMode() {
+    const modo = document.getElementById('modo');
+    const iconos = document.querySelectorAll('.icono');
+    var root = document.documentElement;
+    const shadowButton = document.querySelectorAll('button');
+    
+    if (modo.getAttribute("src") === "src/img/moon-ligth.svg") {
     modo.setAttribute("src", "src/img/sun-dark.svg");
-    github.setAttribute("src", "src/img/github-dark.svg");
-    alura.setAttribute("src", "src/img/alura-icon-dark.svg");
-    linkedin.setAttribute("src", "src/img/linkedin-dark.svg");
-    lock.setAttribute("src", "src/img/lock-dark.svg");
-    unlock.setAttribute("src", "src/img/unlock-dark.svg");
-    copy.setAttribute("src", "src/img/copy-dark.svg");
-    //change colors dark mode
+    
+    iconos.forEach(icono => {
+        if (icono.alt === "Github icon") icono.setAttribute("src", "src/img/github-dark.svg");
+        if (icono.alt === "alura icon") icono.setAttribute("src", "src/img/alura-icon-dark.svg");
+        if (icono.alt === "linkedin icon") icono.setAttribute("src", "src/img/linkedin-dark.svg");
+        if (icono.alt === "Encriptar boton") icono.setAttribute("src", "src/img/lock-dark.svg");
+        if (icono.alt === "Desencriptar boton") icono.setAttribute("src", "src/img/unlock-dark.svg");
+        if (icono.alt === "Copiar boton") icono.setAttribute("src", "src/img/copy-dark.svg");
+        if (icono.alt === "Github-icon-footer") icono.setAttribute("src", "src/img/github-dark-footer.svg");
+
+    });
+      // Cambios de colores para modo oscuro
     root.style.setProperty('--first-color', '#8c426d');
     root.style.setProperty('--second-color', '#2c1f26');
     root.style.setProperty('--third-color', '#fff0f6');
@@ -204,32 +202,35 @@ function changeMode(){
     root.style.setProperty('--fifth-color', '#2c1f26');
     root.style.setProperty('--hover-color', '#b94589');
     root.style.setProperty('--shadow-color', "rgba(11, 7, 9, 0.4)");
-    shadowButton.forEach(boton =>{
-        boton.style.boxShadow ='0rem 0.06rem 0rem 0rem var(--fourth-color)';
+    shadowButton.forEach(boton => {
+        boton.style.boxShadow = '0rem 0.06rem 0rem 0rem var(--fourth-color)';
     });
- }else if(modo.getAttribute("src") == "src/img/sun-dark.svg"){
-     //change icons ligth mode
-     modo.setAttribute("src", "src/img/moon-ligth.svg");
-     github.setAttribute("src", "src/img/github-ligth.svg");
-     alura.setAttribute("src", "src/img/alura-icon-ligth.svg");
-     linkedin.setAttribute("src", "src/img/linkedin-ligth.svg");
-     lock.setAttribute("src", "src/img/lock-ligth.svg");
-     unlock.setAttribute("src", "src/img/unlock-ligth.svg");
-     copy.setAttribute("src", "src/img/copy-ligth.svg");
-     //change colors ligth mode
-     root.style.setProperty('--first-color', '#ff9ecd');
-     root.style.setProperty('--second-color', '#fff0f6');
-     root.style.setProperty('--third-color', '#34113f');
-     root.style.setProperty('--fourth-color', '#8c426d');
-     root.style.setProperty('--fifth-color', '#2c1f26');
-     root.style.setProperty('--hover-color', '#f074b0');
-     root.style.setProperty('--shadow-color', "rgb(44, 31, 38 ,0.4)");
-     shadowButton.forEach(boton =>{
-        boton.style.boxShadow ='0rem 0.07rem 0rem 0rem var(--fourth-color)';
-        });
-
+    } else if (modo.getAttribute("src") === "src/img/sun-dark.svg") {
+    modo.setAttribute("src", "src/img/moon-ligth.svg");
+    iconos.forEach(icono => {
+        if (icono.alt === "Github icon") icono.setAttribute("src", "src/img/github-ligth.svg");
+        if (icono.alt === "alura icon") icono.setAttribute("src", "src/img/alura-icon-ligth.svg");
+        if (icono.alt === "linkedin icon") icono.setAttribute("src", "src/img/linkedin-ligth.svg");
+        if (icono.alt === "Encriptar boton") icono.setAttribute("src", "src/img/lock-ligth.svg");
+        if (icono.alt === "Desencriptar boton") icono.setAttribute("src", "src/img/unlock-ligth.svg");
+        if (icono.alt === "Copiar boton") icono.setAttribute("src", "src/img/copy-ligth.svg");
+        if (icono.alt === "Github-icon-footer") icono.setAttribute("src", "src/img/github-ligth-footer.svg");
+    });
+      // Cambios de colores para modo claro
+    root.style.setProperty('--first-color', '#ff9ecd');
+    root.style.setProperty('--second-color', '#fff0f6');
+    root.style.setProperty('--third-color', '#34113f');
+    root.style.setProperty('--fourth-color', '#8c426d');
+    root.style.setProperty('--fifth-color', '#2c1f26');
+    root.style.setProperty('--hover-color', '#f074b0');
+    root.style.setProperty('--shadow-color', "rgb(44, 31, 38 ,0.4)");
+    shadowButton.forEach(boton => {
+        boton.style.boxShadow = '0rem 0.07rem 0rem 0rem var(--fourth-color)';
+    });
     }
 }
+
+
 
 //setear funcion cambiar de color a un boton
 

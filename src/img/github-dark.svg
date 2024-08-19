@@ -18,7 +18,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_435020_132" result="shape"/>
 </filter>
 <clipPath id="clip0_435020_132">
-<rect width="33" height="31" rx="5" fill="white"/>
+<rect width="33" height="31" rx="5" fill="none"/>
 </clipPath>
 </defs>
 </svg>
