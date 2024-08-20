@@ -70,6 +70,10 @@ body{
   display: none;
 }
 
+.desktop-view{
+  display: none;
+}
+
 .main{
   display: flex;
   flex-direction: column;
@@ -290,6 +294,10 @@ a img{
   padding-left: 1rem;
 }
 
+.desktop-view{
+  display: none;
+}
+
 .main{
   width: 100%;
   height: 81vh;
@@ -395,5 +403,163 @@ button{
   justify-content: center;
   gap: 5%;
 }
+
+}
+
+@media screen and (min-width: 1025px){
+
+  p{
+    font-size: 1rem;
+    color: var(--third-color);
+  }
+
+body{
+  background-color: var(--second-color);
+}
+
+.cel-view{
+  display: none;
+}
+
+.tablet-view{
+  display: none;
+}
+
+.desktop-view{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desktop-view h1{
+  font-size: 1rem;
+  color: var(--third-color);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  max-width: 100%;
+  line-height: 0;
+  margin-top: 0.8rem;
+}
+
+.desktop-view p{
+  font-size: 0.8rem;
+  color: var(--third-color);
+  font-family: var(--font-primary);
+  max-width: 100%;
+  line-height: 0.5;
+  margin-top: 0.4rem;
+}
+
+.main{
+  width: 100%;
+  height: 74vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+section{
+  width: 42%;
+  height: 100%;
+}
+
+.botones{
+  width: 15%;
+  display: block;
+}
+
+.p-button{
+  
+}
+
+.header{
+  width: 100%;
+  height: 13vh;
+  box-shadow: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.desktop-view{
+  box-sizing: border-box;
+}
+
+.espacio{
+  height: 100%;
+  width: 100%;
+}
+
+.instruccion{
+  padding: 1rem;
+}
+
+.instruccion p{
+  font-size: 0.8rem;
+}
+.instruccion small{
+  font-size: 0.4rem;
+}
+
+textarea{
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.input{
+  box-shadow: none;
+}
+
+.input textarea{
+  width: 65%;
+  height: 70%;
+  font-size: 0.7rem;
+}
+
+.output{
+  display: flex;
+  align-items: center;
+}
+
+.espacio-output{
+  z-index: 1;
+}
+
+.espacio-output p{
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+.espacio-output small{
+  font-size: 0.4rem;
+  padding: 0rem 1rem;
+}
+.contenido{
+  background-color: var(--first-color);
+  padding: 0;
+  width: 80%;
+  height: 85%;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  padding: 1rem;
+}
+
+
+.footer{
+  background-color: var(--first-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 13vh;
+  align-items: center;
+  justify-content: center;
+}
+.footer-redes{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
 
 }
