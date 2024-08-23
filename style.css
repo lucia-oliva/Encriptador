@@ -556,10 +556,13 @@ textarea{
 .output{
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .espacio-output{
   z-index: 1;
+  box-sizing: border-box;
+  width: 80%;
 }
 
 .espacio-output p{
@@ -572,6 +575,7 @@ textarea{
 .espacio-output small{
   font-size: 0.4rem;
   width: 100%;
+  box-sizing: border-box;
 }
 .contenido{
   background-color: var(--first-color);
